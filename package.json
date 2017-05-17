@@ -1,0 +1,16 @@
+{
+  "name": "mqtt-boot-ctrl",
+  "version": "1.0.0",
+  "description": "MQTT message interface to reboot or shutdown a linux box.",
+  "main": "index.js",
+  "bin": "./index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dirk Dresch",
+  "license": "MIT",
+  "dependencies": {
+    "mqtt": "^2.4.0"
+  }
+}
