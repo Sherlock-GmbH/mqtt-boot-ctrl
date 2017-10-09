@@ -52,5 +52,14 @@ client.on('message', function (topic, message) {
       client.publish(namespace + '/' + playerId + '/status', 'shutting down');
       exec('sudo /sbin/shutdown now');
       break;
+    case 'cec-power':
+      if(message === 'on') {
+        client.publish(namespace + '/' + playerId + '/status', 'cec-power-on');
+        exec('echo "on 0" | sudo cec-client -s -d 1');
+      } else {
+        client.publish(namespace + '/' + playerId + '/status', 'cec-power-off');
+        exec('echo "standby 0" | sudo cec-client -s -d 1');
+      }
+      break;
   }
 });
